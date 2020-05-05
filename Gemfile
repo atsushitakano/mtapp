@@ -67,3 +67,4 @@ gem 'bootstrap'
 gem "bootstrap-sass", "~>3.4.1"
 gem "jquery-rails"
 gem "jquery-ui-rails"
+gem 'devise'
