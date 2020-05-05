@@ -1,0 +1,28 @@
+.main-header
+  .top-header.row.mt-3
+    .left-header.col-lg-4
+      .left-header__title.h1.text-info
+        %i.fas.fa-campground
+        = link_to 'Mt.cook', '#'
+    .right-header.col-lg-4.offset-4
+      .row
+        .right-header__search.mt-2.small
+          %input.form-control{placeholder: "テキスト入力欄", type: "text"}
+        .right-header__sumb
+          = link_to 'login', root_path , class: 'btn btn-outline-warning mt-2 ml-2'
+        .right-header__logo.ml-2
+          = image_tag 'https://picsum.photos/200/300', alt: '', height: '50px', width: '50px', class: 'rounded-circle'
+  .header-contents
+    .header-content.mt-2
+      %ul.nav.nav-tabs
+        %li.nav-item.header-content__finaly
+          = link_to "What's new", '#',class: 'nav-link'
+        %li.nav-item.header-content__cook
+          = link_to "Cook", '#',class: 'nav-link'
+        %li.nav-item.header-content__mens
+          = link_to "Mens", '#',class: 'nav-link'
+        %li.nav-item.header-content__womens
+          = link_to "Womes", '#',class: 'nav-link'
+        %li.nav-item.header-content__tool
+          = link_to "Tool", '#',class: 'nav-link'
+
