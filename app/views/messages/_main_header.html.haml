@@ -4,12 +4,14 @@
       .left-header__title.h1.text-info
         %i.fas.fa-campground
         = link_to 'Mt.cook', '#'
-    .right-header.col-lg-4.offset-4
-      .row
+    .right-header.col-lg-8.f-flex
+      .row.justify-content-end
         .right-header__search.mt-2.small
           %input.form-control{placeholder: "テキスト入力欄", type: "text"}
         .right-header__sumb
-          = link_to 'login', new_user_session_path , class: 'btn btn-outline-warning mt-2 ml-2'
+          = link_to 'login', new_user_registration_path , class: 'btn btn-outline-warning mt-2 ml-2'
+        .right-header__sumb
+          = link_to 'logout', destroy_user_session_path, method: :delete, class: 'btn btn-outline-warning mt-2 ml-2'
         .right-header__logo.ml-2
           = image_tag 'https://picsum.photos/200/300', alt: '', height: '50px', width: '50px', class: 'rounded-circle'
   .header-contents
