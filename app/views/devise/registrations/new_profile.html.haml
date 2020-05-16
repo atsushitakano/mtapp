@@ -1,0 +1,36 @@
+.container.row
+  -# .error-message.row.col-lg-9.offset-3
+  -#   = render "devise/shared/error_messages", resource: @profile
+  .sign-up.form-group.mt-3.col-ms-6.offset-5
+    %h2.mb-3 Profile
+    = form_for @profile do |f|
+      .field.mt-2
+        = f.label :nickname
+        %br/
+        = f.text_field :nickname,class: "form-control"
+      .field.mt-2
+        man
+        = f.radio_button :sex, :man
+        woman
+        = f.radio_button :sex, :woman
+      .field.mt-2
+        = f.label :age
+        %br/
+        = f.select :age, (15..100), {},class: "form-control"
+      .field.mt-2
+        = f.label :birthplace
+        %br/
+        = f.select :birthplace, User.areas.keys, {prompt: '選択してください'},class: "form-control"
+      .field.mt-2
+        = f.label :activearea
+        %br/
+        = f.select :activearea, User.areas.keys, {prompt: '選択してください'},class: "form-control"
+      .field.mt-2
+        = f.label :thumbnail
+        %br/
+        = f.file_field :avatar
+      .actions.mt-2
+        = f.submit "Sign up",class: "btn btn-primary"
+
+
+  

@@ -3,7 +3,7 @@
     = render "devise/shared/error_messages", resource: resource
   .sign-up.form-group.mt-3.col-ms-6.offset-5
     %h2.mb-3 Sign up
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = form_for(@user, url: user_registration_path) do |f|
       .field.mt-2
         = f.label :email
         %br/
@@ -19,27 +19,6 @@
         = f.label :password_confirmation
         %br/
         = f.password_field :password_confirmation, autocomplete: "new-password",class: "form-control"
-      .field.mt-2
-        = f.label :nickname
-        %br/
-        = f.text_field :nickname,class: "form-control"
-      .field.mt-2
-        man
-        = f.radio_button :sex, :man
-        woman
-        = f.radio_button :sex, :woman
-      .field.mt-2
-        = f.label :age
-        %br/
-        = f.select :age, (15..100), {},class: "form-control"
-      .field.mt-2
-        = f.label :birthplace
-        %br/
-        = f.select :birthplace, User.areas.keys, {prompt: '選択してください'},class: "form-control"
-      .field.mt-2
-        = f.label :activearea
-        %br/
-        = f.select :activearea, User.areas.keys, {prompt: '選択してください'},class: "form-control"
       .actions.mt-2
-        = f.submit "Sign up",class: "btn btn-primary"
+        = f.submit "Next",class: "btn btn-primary"
     = render "devise/shared/links"
