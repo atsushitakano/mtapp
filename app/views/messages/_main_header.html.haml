@@ -4,19 +4,24 @@
       .left-header__title.h1.text-info
         %i.fas.fa-campground
         = link_to 'Mt.cook', '#'
-    .right-header.col-lg-4.offset-4
-      .row
+        = link_to "New tweet", new_message_path,class: 'btn btn-primary ml-2'
+    .right-header.col-lg-8.f-flex
+      .row.justify-content-end
         .right-header__search.mt-2.small
           %input.form-control{placeholder: "テキスト入力欄", type: "text"}
         .right-header__sumb
-          = link_to 'login', root_path , class: 'btn btn-outline-warning mt-2 ml-2'
+          = link_to 'login', new_user_registration_path , class: 'btn btn-outline-warning mt-2 ml-2'
+        .right-header__sumb
+          = link_to 'logout', destroy_user_session_path, method: :delete, class: 'btn btn-outline-warning mt-2 ml-2'
         .right-header__logo.ml-2
           = image_tag 'https://picsum.photos/200/300', alt: '', height: '50px', width: '50px', class: 'rounded-circle'
   .header-contents
-    .header-content.mt-2
+    .header-content.mt-2.d-flex.justify-content-between
       %ul.nav.nav-tabs
         %li.nav-item.header-content__finaly
           = link_to "What's new", '#',class: 'nav-link'
+        %li.nav-item.header-content__season
+          = link_to "Season", '#',class: 'nav-link'
         %li.nav-item.header-content__cook
           = link_to "Cook", '#',class: 'nav-link'
         %li.nav-item.header-content__mens
@@ -25,4 +30,5 @@
           = link_to "Womes", '#',class: 'nav-link'
         %li.nav-item.header-content__tool
           = link_to "Tool", '#',class: 'nav-link'
+      
 

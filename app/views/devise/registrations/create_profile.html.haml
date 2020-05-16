@@ -1,0 +1,5 @@
+.container
+  .sign-up.form-group.mt-3.col-ms-6.offset-5
+    %h2.mb-3 登録が完了しました
+  -# = image_tag @profile.avatar, alt: '', height: '100px', width: '100px',class: 'rounded-circle'
+    = link_to 'トップページへ戻る', root_path,class: "btn btn-primary"
