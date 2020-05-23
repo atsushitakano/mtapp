@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.includes(:user)
+    @messages = Message.includes(:user).page(params[:page]).per(3)
   end
 
   def new 
