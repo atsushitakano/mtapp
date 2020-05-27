@@ -67,4 +67,5 @@ gem 'bootstrap'
 gem "jquery-rails"
 gem "jquery-ui-rails"
 gem 'devise'
+gem 'kaminari'
 gem 'pry-rails'

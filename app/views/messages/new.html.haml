@@ -2,12 +2,17 @@
   .col-8.offset-2
     %h2.my-3.font-weight-bold.offset-2 山ごはんの投稿
     .col-8.offset-2
-      .card
-        %svg.bd-placeholder-img.card-img-top.p-1{"aria-label" => "Placeholder: Image cap", :focusable => "false", :height => "300", :preserveaspectratio => "xMidYMid slice", :role => "img", :width => "100%", :xmlns => "http://www.w3.org/2000/svg"}
-          %title Placeholder
-          %rect{:fill => "#868e96", :height => "100%", :width => "100%"}
-          %text{:dy => ".3em", :fill => "#dee2e6", :x => "50%", :y => "50%"} Image cap
-        .card-body
-          %h5.card-title 
-          %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
-          %a.btn.btn-primary{:href => "#"} Go somewhere
+      = form_for @message do |f|
+        .card
+          = f.file_field :images, multiple: true
+          %svg.bd-placeholder-img.card-img-top.p-1{"aria-label" => "Placeholder: Image cap", :focusable => "false", :height => "300", :preserveaspectratio => "xMidYMid slice", :role => "img", :width => "100%", :xmlns => "http://www.w3.org/2000/svg"}
+            %title Placeholder
+            %rect{:fill => "#868e96", :height => "100%", :width => "100%"}
+            %text{:dy => ".3em", :fill => "#dee2e6", :x => "50%", :y => "50%"} Image cap
+          .card-body
+            = f.text_field :title, placeholder: "title",class: "row form-control mt-2"
+            -# %h5.card-title 
+            = f.text_area :text, placeholder: "text",class: "row form-control mt-2"
+            -# %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+            = f.submit "post",class: "row btn btn-primary mt-2"
+            -# %a.btn.btn-primary{:href => "#"} Go somewhere

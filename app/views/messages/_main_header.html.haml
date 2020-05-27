@@ -11,8 +11,9 @@
           %input.form-control{placeholder: "テキスト入力欄", type: "text"}
         .right-header__sumb
           = link_to 'login', new_user_registration_path , class: 'btn btn-outline-warning mt-2 ml-2'
-        .right-header__sumb
-          = link_to 'logout', destroy_user_session_path, method: :delete, class: 'btn btn-outline-warning mt-2 ml-2'
+        - if user_signed_in?
+          .right-header__sumb
+            = link_to 'logout', destroy_user_session_path, method: :delete, class: 'btn btn-outline-warning mt-2 ml-2'
         .right-header__logo.ml-2
           = image_tag 'https://picsum.photos/200/300', alt: '', height: '50px', width: '50px', class: 'rounded-circle'
   .header-contents
