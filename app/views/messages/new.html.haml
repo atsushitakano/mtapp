@@ -3,6 +3,12 @@
     %h2.my-3.font-weight-bold.offset-2 山ごはんの投稿
     .col-8.offset-2
       = form_for @message do |f|
+        - if @message.errors.any?
+          .message-form__errors
+            %h2= "#{@message.errors.full_messages.count}件のエラーが発生しました"
+            %ul
+              - @message.errors.full_messages.each do |message|
+                %li= message
         .card
           = f.file_field :images, multiple: true
           %svg.bd-placeholder-img.card-img-top.p-1{"aria-label" => "Placeholder: Image cap", :focusable => "false", :height => "300", :preserveaspectratio => "xMidYMid slice", :role => "img", :width => "100%", :xmlns => "http://www.w3.org/2000/svg"}
