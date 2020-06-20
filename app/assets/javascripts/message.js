@@ -1,8 +1,8 @@
-<<<<<<< Updated upstream
+
 $(function(){
   $('.previews').slick();
 });
-=======
+
 $(function() {
 
   $('#new_message').on('submit',function(){
@@ -59,4 +59,13 @@ $(function() {
 // });
 
 
->>>>>>> Stashed changes
+
+  $('.preview').slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear'
+  })
+});
+
